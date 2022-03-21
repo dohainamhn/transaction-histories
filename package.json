@@ -1,0 +1,16 @@
+{
+  "name": "Oxb-transaction-histories",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ Oxb-transaction-histories",
+    "create-local": "graph create --node http://localhost:8020/ Oxb-transaction-histories",
+    "remove-local": "graph remove --node http://localhost:8020/ Oxb-transaction-histories",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 Oxb-transaction-histories"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.28.1",
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}

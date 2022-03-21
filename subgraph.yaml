@@ -1,0 +1,50 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Oxb
+    network: rinkeby
+    source:
+      address: "0x2Dc0Ede2CB10c85E8B97EB79a038CfDe858a6571"
+      abi: Oxb
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ContsMinted
+        - ERC20PaymentReleased
+        - OwnershipTransferred
+        - PayeeAdded
+        - PaymentReceived
+        - PaymentReleased
+        - RewardCashoutAll
+        - RewardCashoutOne
+        - Transfer
+      abis:
+        - name: Oxb
+          file: ./abis/Oxb.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: ContsMinted(address)
+          handler: handleContsMinted
+        - event: ERC20PaymentReleased(indexed address,address,uint256)
+          handler: handleERC20PaymentReleased
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PayeeAdded(address,uint256)
+          handler: handlePayeeAdded
+        - event: PaymentReceived(address,uint256)
+          handler: handlePaymentReceived
+        - event: PaymentReleased(address,uint256)
+          handler: handlePaymentReleased
+        - event: RewardCashoutAll(address)
+          handler: handleRewardCashoutAll
+        - event: RewardCashoutOne(address,uint256)
+          handler: handleRewardCashoutOne
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
