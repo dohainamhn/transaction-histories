@@ -1,0 +1,4 @@
+export const WAVAX_ADDRESS = '0xc778417e063141139fce010982780140aa0cd5ab';
+export const USDC_ADDRESS = '0x5b8470fbc6b31038aa07abd3010acffca6e36611';
+export const OXB_ADDRESS = '0xbbcf09184f8dfb252c1417074404c48b1a7e9c25';
+export const USDT_ADDRESS = '0x9ad6c38be94206ca50bb0d90783181662f0cfa10';

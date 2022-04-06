@@ -1,6 +1,14 @@
-type ExampleEntity @entity {
+type Token @entity{
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  spender: Bytes! # address
+  symbol: String
+}
+
+type Swap @entity {
+  id: ID!
+  sender: Bytes! # address
+  date: Int!
+  tokenIn: Token!
+  tokenOut: Token!
+  amountIn: BigDecimal!
+  amountOut: BigDecimal!
 }
